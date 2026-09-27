@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:sniffer_egg",
+    "#minecraft:decorated_pot_sherds",
+    "#minecraft:terracotta"
+  ],
+  "result": {
+    "id": "better-eyes:eye_02",
+    "count": 1
+  }
+}

@@ -1,5 +1,6 @@
 # gradle
 
+src/main/generated/.cache/
 .gradle/
 build/
 out/
