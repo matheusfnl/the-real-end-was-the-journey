@@ -28,6 +28,7 @@ public class ModItems {
     BetterEyes.LOGGER.info("Registering Mod Items for " + BetterEyes.MOD_ID);
 
     CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
+      output.insertBefore(Items.ENDER_EYE, ModItems.BUM_ITEM);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_02);
     });
   }
