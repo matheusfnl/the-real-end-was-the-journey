@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 public class ModItems {
+  public static final Item BUM_ITEM = registerItem("bum_item", Item::new);
   public static final Item EYE_02 = registerItem("eye_02", Item::new);
 
   private static Item registerItem(String name, Function<Item.Properties, Item> function) {
@@ -27,6 +28,7 @@ public class ModItems {
     BetterEyes.LOGGER.info("Registering Mod Items for " + BetterEyes.MOD_ID);
 
     CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
+      output.insertBefore(Items.ENDER_EYE, ModItems.BUM_ITEM);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_02);
     });
   }

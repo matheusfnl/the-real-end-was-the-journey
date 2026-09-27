@@ -7,7 +7,9 @@
 		"StructureTemplateMixin",
 		"StructureTemplateManagerMixin",
 		"VillagerTradesMixin",
-		"VillagerOfferMixin"
+		"VillagerOfferMixin",
+		"HeroTradeWithBumMixin",
+		"HeroEffectCycleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
