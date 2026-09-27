@@ -17,6 +17,17 @@ import net.minecraft.world.level.Level;
 import net.matheuses.bettereyes.item.ModItems;
 import net.matheuses.bettereyes.tag.ModItemTags;
 
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
+
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+
+import net.minecraft.resources.Identifier;
+
+import net.minecraft.world.item.component.CustomData;
+
 public final class Eye08Recipe extends CustomRecipe {
     public static final Eye08Recipe INSTANCE = new Eye08Recipe();
 
@@ -73,7 +84,25 @@ public final class Eye08Recipe extends CustomRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput input) {
-        return new ItemStack(ModItems.EYE_08);
+        ListTag discIds = new ListTag();
+
+        for (ItemStack stack : input.items()) {
+            if (stack.is(ModItemTags.MUSIC_DISCS)) {
+                Identifier id = BuiltInRegistries.ITEM.getKey(stack.getItem());
+                discIds.add(StringTag.valueOf(id.toString()));
+            }
+        }
+
+        if (discIds.size() != 8) {
+            return ItemStack.EMPTY;
+        }
+
+        CompoundTag data = new CompoundTag();
+        data.put("eye_08_discs", discIds);
+
+        ItemStack result = new ItemStack(ModItems.EYE_08);
+        result.set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+        return result;
     }
 
     @Override
