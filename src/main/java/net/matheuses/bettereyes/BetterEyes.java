@@ -3,6 +3,7 @@ package net.matheuses.bettereyes;
 import net.fabricmc.api.ModInitializer;
 import net.matheuses.bettereyes.item.ModItems;
 import net.matheuses.bettereyes.data.ModAttachments;
+import net.matheuses.bettereyes.recipe.ModRecipes;
 
 import net.minecraft.resources.Identifier;
 
@@ -28,6 +29,7 @@ public class BetterEyes implements ModInitializer {
 
 		ModAttachments.initialize();
 		ModItems.registerModItems();
+		ModRecipes.registerModRecipes();
 	}
 
 	public static Identifier id(String path) {
