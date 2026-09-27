@@ -1,6 +1,7 @@
 package net.matheuses.bettereyes;
 
 import net.fabricmc.api.ModInitializer;
+import net.matheuses.bettereyes.item.ModItems;
 
 import net.minecraft.resources.Identifier;
 
@@ -22,6 +23,8 @@ public class BetterEyes implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		ModItems.registerModItems();
 	}
 
 	public static Identifier id(String path) {
