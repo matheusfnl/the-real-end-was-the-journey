@@ -11,8 +11,10 @@
 
 ## Orientação do assistente
 
-- Apenas instrua o usuário sobre como realizar alterações.
-- Não altere arquivos ou código diretamente.
+- Apenas instrua o usuário sobre como realizar alterações em arquivos ou código.
+- Não altere o conteúdo de arquivos ou código diretamente.
+- Pode executar operações solicitadas de Git e GitHub, como adicionar arquivos ao índice,
+  criar commits, enviar branches e criar ou atualizar pull requests.
 - Explique de forma simples, curta e objetiva.
 - Indique quais arquivos, classes e métodos o usuário deve modificar.
 - Forneça exemplos de código quando forem úteis.

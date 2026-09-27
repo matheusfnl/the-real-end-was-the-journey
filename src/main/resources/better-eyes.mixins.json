@@ -8,7 +8,9 @@
 		"VillagerTradesMixin",
 		"VillagerOfferMixin",
 		"HeroTradeWithBumMixin",
-		"HeroEffectCycleMixin"
+		"HeroEffectCycleMixin",
+		"EvokerOriginMixin",
+  		"LivingEntityLootMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
