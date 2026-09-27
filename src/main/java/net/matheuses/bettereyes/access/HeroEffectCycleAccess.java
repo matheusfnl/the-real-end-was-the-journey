@@ -1,4 +1,4 @@
-package net.matheuses.bettereyes.mixin.access;
+package net.matheuses.bettereyes.access;
 
 public interface HeroEffectCycleAccess {
     long betterEyes$getHeroEffectCycle();

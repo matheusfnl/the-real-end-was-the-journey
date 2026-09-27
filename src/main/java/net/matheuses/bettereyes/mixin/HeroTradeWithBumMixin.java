@@ -1,18 +1,14 @@
 package net.matheuses.bettereyes.mixin;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.UUID;
-import net.matheuses.bettereyes.mixin.access.HeroEffectCycleAccess;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import net.matheuses.bettereyes.access.HeroEffectCycleAccess;
 import net.matheuses.bettereyes.item.ModItems;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -37,9 +33,6 @@ public abstract class HeroTradeWithBumMixin {
 
     @Unique
     private final Map<UUID, Integer> betterEyes$prices = new HashMap<>();
-
-    @Unique
-    private final Set<UUID> betterEyes$customers = new HashSet<>();
 
     @Unique
     private final Map<UUID, Long> betterEyes$usedHeroCycles = new HashMap<>();
@@ -106,13 +99,6 @@ public abstract class HeroTradeWithBumMixin {
             entry.putInt("Price", price);
         });
 
-        ValueOutput.ValueOutputList customers = output.childrenList("betterEyes$heroTradeCustomers");
-
-        betterEyes$customers.forEach(playerId -> {
-            ValueOutput entry = customers.addChild();
-            entry.putString("Player", playerId.toString());
-        });
-
         ValueOutput.ValueOutputList cycles = output.childrenList("BetterEyesUsedHeroCycles");
 
         betterEyes$usedHeroCycles.forEach((playerId, cycle) -> {
@@ -136,18 +122,6 @@ public abstract class HeroTradeWithBumMixin {
                 betterEyes$prices.put(UUID.fromString(playerId), price);
             } catch (IllegalArgumentException ignored) {
                 // Ignora UUIDs inválidos em dados corrompidos.
-            }
-        }
-
-        betterEyes$customers.clear();
-
-        for (ValueInput entry : input.childrenListOrEmpty("betterEyes$heroTradeCustomers")) {
-            String playerId = entry.getStringOr("Player", "");
-
-            try {
-                betterEyes$customers.add(UUID.fromString(playerId));
-            } catch (IllegalArgumentException ignored) {
-                // Ignora UUIDs inválidos.
             }
         }
 

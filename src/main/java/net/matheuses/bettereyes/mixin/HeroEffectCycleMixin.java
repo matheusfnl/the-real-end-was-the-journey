@@ -1,6 +1,6 @@
 package net.matheuses.bettereyes.mixin;
 
-import net.matheuses.bettereyes.mixin.access.HeroEffectCycleAccess;
+import net.matheuses.bettereyes.access.HeroEffectCycleAccess;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.storage.ValueInput;
