@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "better-eyes:concentrated_red_mushroom_soup",
+    "better-eyes:concentrated_brown_mushroom_soup",
+    "minecraft:mushroom_stew",
+    "minecraft:rabbit_stew",
+    "minecraft:beetroot_soup",
+    "minecraft:suspicious_stew"
+  ],
+  "result": {
+    "id": "better-eyes:eye_06",
+    "count": 1
+  }
+}

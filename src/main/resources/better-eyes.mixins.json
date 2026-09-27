@@ -10,7 +10,8 @@
 		"HeroTradeWithBumMixin",
 		"HeroEffectCycleMixin",
 		"EvokerOriginMixin",
-  		"LivingEntityLootMixin"
+		"LivingEntityLootMixin",
+		"MooshroomSoupMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

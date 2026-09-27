@@ -23,6 +23,38 @@ public class ModItems {
   public static final Item BUM_ITEM = registerItem("bum_item", Item::new);
   public static final Item EYE_02 = registerItem("eye_02", Item::new);
   public static final Item EYE_04 = registerItem("eye_04", Item::new);
+  public static final Item EYE_06 = registerItem("eye_06", Item::new);
+  public static final Item CONCENTRATED_BROWN_MUSHROOM_SOUP = registerItem("concentrated_brown_mushroom_soup", properties ->
+      new Item(properties.stacksTo(1).food(
+          new FoodProperties.Builder()
+              .nutrition(6)
+              .saturationModifier(1.2F)
+              .build(),
+          Consumables.defaultFood()
+              .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
+                  new MobEffectInstance(MobEffects.REGENERATION, 600, 0),
+                  new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 300, 0),
+                  new MobEffectInstance(MobEffects.RESISTANCE, 300, 0)
+              )))
+              .build()
+      ).usingConvertsTo(Items.BOWL))
+  );
+
+  public static final Item CONCENTRATED_RED_MUSHROOM_SOUP = registerItem("concentrated_red_mushroom_soup", properties ->
+      new Item(properties.stacksTo(1).food(
+          new FoodProperties.Builder()
+              .nutrition(6)
+              .saturationModifier(1.2F)
+              .build(),
+          Consumables.defaultFood()
+              .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
+                  new MobEffectInstance(MobEffects.REGENERATION, 600, 0),
+                  new MobEffectInstance(MobEffects.SATURATION, 300, 0),
+                  new MobEffectInstance(MobEffects.JUMP_BOOST, 300, 0)
+              )))
+              .build()
+      ).usingConvertsTo(Items.BOWL))
+  );
 
   public static final Item ICE_APPLE = registerItem("ice_apple", properties ->
       new Item(properties.food(
@@ -52,12 +84,15 @@ public class ModItems {
 
     CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
       output.insertBefore(Items.ENDER_EYE, ModItems.BUM_ITEM);
+      output.insertAfter(Items.ENDER_EYE, ModItems.EYE_06);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_04);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_02);
     });
 
     CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(output -> {
       output.insertAfter(Items.ENCHANTED_GOLDEN_APPLE, ModItems.ICE_APPLE);
+      output.insertAfter(Items.SUSPICIOUS_STEW, ModItems.CONCENTRATED_BROWN_MUSHROOM_SOUP);
+      output.insertAfter(Items.SUSPICIOUS_STEW, ModItems.CONCENTRATED_RED_MUSHROOM_SOUP);
     });
   }
 }
