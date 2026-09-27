@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-
+import net.matheuses.bettereyes.mixin.access.HeroEffectCycleAccess;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -42,22 +42,20 @@ public abstract class HeroTradeWithBumMixin {
     private final Set<UUID> betterEyes$customers = new HashSet<>();
 
     @Unique
-    private final Map<UUID, Long> betterEyes$blockedUntil = new HashMap<>();
+    private final Map<UUID, Long> betterEyes$usedHeroCycles = new HashMap<>();
 
     @Inject(method = "mobInteract", at = @At("HEAD"))
     private void betterEyes$prepareHeroTrade(
-        Player player,
-        InteractionHand hand,
-        CallbackInfoReturnable<?> callback
-    ) {
+            Player player,
+            InteractionHand hand,
+            CallbackInfoReturnable<?> callback) {
         Villager villager = (Villager) (Object) this;
 
-        if (
-            villager.level().isClientSide() ||
-            villager.isBaby() ||
-            ! villager.getVillagerData()
-            .profession()
-            .is(VillagerProfession.NITWIT)) {
+        if (villager.level().isClientSide() ||
+                villager.isBaby() ||
+                !villager.getVillagerData()
+                        .profession()
+                        .is(VillagerProfession.NITWIT)) {
             return;
         }
 
@@ -67,26 +65,27 @@ public abstract class HeroTradeWithBumMixin {
             UUID playerId = player.getUUID();
             long currentTick = villager.level().getGameTime();
             int emeraldCost = betterEyes$prices.computeIfAbsent(
-                player.getUUID(),
-                ignored -> villager.getRandom()
-                    .nextIntBetweenInclusive(MIN_EMERALD_COST, MAX_EMERALD_COST)
-            );
+                    player.getUUID(),
+                    ignored -> villager.getRandom()
+                            .nextIntBetweenInclusive(MIN_EMERALD_COST, MAX_EMERALD_COST));
 
             MerchantOffer heroOffer = new MerchantOffer(
-                new ItemCost(Items.EMERALD, emeraldCost),
-                new ItemStack(ModItems.BUM_ITEM),
-                1,
-                0,
-                0.05F
-            );
+                    new ItemCost(Items.EMERALD, emeraldCost),
+                    new ItemStack(ModItems.BUM_ITEM),
+                    1,
+                    0,
+                    0.05F);
 
-            long blockedUntil =
-                betterEyes$blockedUntil.getOrDefault(playerId, 0L);
+            HeroEffectCycleAccess cycleAccess = (HeroEffectCycleAccess) player;
 
-            if (currentTick < blockedUntil) {
+            long currentCycle = cycleAccess.betterEyes$getHeroEffectCycle();
+
+            long usedCycle = betterEyes$usedHeroCycles.getOrDefault(
+                    player.getUUID(),
+                    -1L);
+
+            if (usedCycle == currentCycle) {
                 heroOffer.setToOutOfStock();
-            } else {
-                betterEyes$blockedUntil.remove(playerId);
             }
 
             heroOffers.add(heroOffer);
@@ -97,11 +96,9 @@ public abstract class HeroTradeWithBumMixin {
 
     @Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
     private void betterEyes$saveHeroTradePrices(
-        ValueOutput output,
-        CallbackInfo callback
-    ) {
-        ValueOutput.ValueOutputList entries =
-            output.childrenList("betterEyes$heroTradePrices");
+            ValueOutput output,
+            CallbackInfo callback) {
+        ValueOutput.ValueOutputList entries = output.childrenList("betterEyes$heroTradePrices");
 
         betterEyes$prices.forEach((playerId, price) -> {
             ValueOutput entry = entries.addChild();
@@ -109,35 +106,29 @@ public abstract class HeroTradeWithBumMixin {
             entry.putInt("Price", price);
         });
 
-        ValueOutput.ValueOutputList customers =
-            output.childrenList("betterEyes$heroTradeCustomers");
+        ValueOutput.ValueOutputList customers = output.childrenList("betterEyes$heroTradeCustomers");
 
         betterEyes$customers.forEach(playerId -> {
             ValueOutput entry = customers.addChild();
             entry.putString("Player", playerId.toString());
         });
 
-        ValueOutput.ValueOutputList blocks =
-            output.childrenList("BetterEyesHeroTradeBlocks");
+        ValueOutput.ValueOutputList cycles = output.childrenList("BetterEyesUsedHeroCycles");
 
-        betterEyes$blockedUntil.forEach((playerId, expirationTick) -> {
-            ValueOutput entry = blocks.addChild();
+        betterEyes$usedHeroCycles.forEach((playerId, cycle) -> {
+            ValueOutput entry = cycles.addChild();
             entry.putString("Player", playerId.toString());
-            entry.putLong("Until", expirationTick);
+            entry.putLong("Cycle", cycle);
         });
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
     private void betterEyes$loadHeroTradePrices(
-      ValueInput input,
-      CallbackInfo callback
-    ) {
+            ValueInput input,
+            CallbackInfo callback) {
         betterEyes$prices.clear();
 
-        for (
-            ValueInput entry :
-            input.childrenListOrEmpty("betterEyes$heroTradePrices")
-        ) {
+        for (ValueInput entry : input.childrenListOrEmpty("betterEyes$heroTradePrices")) {
             String playerId = entry.getStringOr("Player", "");
             int price = entry.getIntOr("Price", MIN_EMERALD_COST);
 
@@ -150,10 +141,7 @@ public abstract class HeroTradeWithBumMixin {
 
         betterEyes$customers.clear();
 
-        for (
-            ValueInput entry :
-            input.childrenListOrEmpty("betterEyes$heroTradeCustomers")
-        ) {
+        for (ValueInput entry : input.childrenListOrEmpty("betterEyes$heroTradeCustomers")) {
             String playerId = entry.getStringOr("Player", "");
 
             try {
@@ -163,20 +151,16 @@ public abstract class HeroTradeWithBumMixin {
             }
         }
 
-        betterEyes$blockedUntil.clear();
+        betterEyes$usedHeroCycles.clear();
 
-        for (
-            ValueInput entry :
-            input.childrenListOrEmpty("BetterEyesHeroTradeBlocks")
-        ) {
+        for (ValueInput entry : input.childrenListOrEmpty("BetterEyesUsedHeroCycles")) {
             String playerId = entry.getStringOr("Player", "");
-            long expirationTick = entry.getLongOr("Until", 0L);
+            long cycle = entry.getLongOr("Cycle", -1L);
 
             try {
-                betterEyes$blockedUntil.put(
-                    UUID.fromString(playerId),
-                    expirationTick
-                );
+                betterEyes$usedHeroCycles.put(
+                        UUID.fromString(playerId),
+                        cycle);
             } catch (IllegalArgumentException ignored) {
                 // Ignora UUID inválido.
             }
@@ -187,49 +171,33 @@ public abstract class HeroTradeWithBumMixin {
     private void betterEyes$closeTradeWithoutHero(CallbackInfo callback) {
         Villager villager = (Villager) (Object) this;
 
-        if (
-            ! villager.getVillagerData()
-            .profession()
-            .is(VillagerProfession.NITWIT)
-        ) {
+        if (!villager.getVillagerData()
+                .profession()
+                .is(VillagerProfession.NITWIT)) {
             return;
         }
 
-        if (
-            villager.getTradingPlayer() instanceof ServerPlayer player &&
-            !player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE)
-        ) {
-            betterEyes$blockedUntil.remove(player.getUUID());
+        if (villager.getTradingPlayer() instanceof ServerPlayer player &&
+                !player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE)) {
             player.closeContainer();
         }
     }
 
     @Inject(method = "rewardTradeXp", at = @At("TAIL"))
     private void betterEyes$rememberCustomer(
-        MerchantOffer offer,
-        CallbackInfo callback
-    ) {
+            MerchantOffer offer,
+            CallbackInfo callback) {
         Villager villager = (Villager) (Object) this;
 
-        if (
-          !offer.getResult().is(ModItems.BUM_ITEM) ||
-          !(villager.getTradingPlayer() instanceof ServerPlayer player)
-        ) {
+        if (!offer.getResult().is(ModItems.BUM_ITEM) ||
+                !(villager.getTradingPlayer() instanceof ServerPlayer player)) {
             return;
         }
 
-        var heroEffect =
-          player.getEffect(MobEffects.HERO_OF_THE_VILLAGE);
+        HeroEffectCycleAccess cycleAccess = (HeroEffectCycleAccess) player;
 
-        if (heroEffect != null) {
-            long expirationTick =
-                villager.level().getGameTime() +
-                heroEffect.getDuration();
-
-            betterEyes$blockedUntil.put(
+        betterEyes$usedHeroCycles.put(
                 player.getUUID(),
-                expirationTick
-            );
-        }
+                cycleAccess.betterEyes$getHeroEffectCycle());
     }
 }

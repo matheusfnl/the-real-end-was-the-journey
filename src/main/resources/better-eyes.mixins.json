@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"ExampleMixin",
-		"HeroTradeWithBumMixin"
+		"HeroTradeWithBumMixin",
+		"HeroEffectCycleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
