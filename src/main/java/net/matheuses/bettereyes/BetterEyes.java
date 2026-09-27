@@ -2,11 +2,13 @@ package net.matheuses.bettereyes;
 
 import net.fabricmc.api.ModInitializer;
 import net.matheuses.bettereyes.item.ModItems;
+import net.matheuses.bettereyes.data.ModAttachments;
 
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 public class BetterEyes implements ModInitializer {
 	public static final String MOD_ID = "better-eyes";
@@ -24,6 +26,7 @@ public class BetterEyes implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 
+		ModAttachments.initialize();
 		ModItems.registerModItems();
 	}
 
