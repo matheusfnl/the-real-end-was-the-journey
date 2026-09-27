@@ -12,6 +12,12 @@ public class ModAttachments {
             .copyOnDeath()
             .buildAndRegister(BetterEyes.id("igloo_origin"));
 
+    public static final AttachmentType<Boolean> EYE_TRADE_USED =
+        AttachmentRegistry.<Boolean>builder()
+            .persistent(Codec.BOOL)
+            .copyOnDeath()
+            .buildAndRegister(BetterEyes.id("eye_trade_used"));
+
     public static void initialize() {
     }
 }

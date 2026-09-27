@@ -28,6 +28,17 @@ public final class IglooTrades {
             return;
         }
 
+        boolean tradeUsed =
+            ((AttachmentTarget) villager).getAttachedOrElse(
+                ModAttachments.EYE_TRADE_USED,
+                false
+            );
+
+        if (tradeUsed) {
+            offers.removeIf(offer -> offer.getResult().is(ModItems.EYE_02));
+            return;
+        }
+
         boolean alreadyHasTrade = offers.stream()
             .anyMatch(offer ->
                 offer.getResult().is(ModItems.EYE_02)
@@ -38,9 +49,9 @@ public final class IglooTrades {
         }
 
         offers.add(new MerchantOffer(
-            new ItemCost(Items.EMERALD, 16),
+            new ItemCost(Items.EMERALD, 1),
             new ItemStack(ModItems.EYE_02, 1),
-            3,
+            1,
             5,
             0.05F
         ));

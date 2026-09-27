@@ -21,6 +21,11 @@ public abstract class StructureTemplateMixin implements IglooTemplateAccess {
     private boolean bettereyes$iglooBasement;
 
     @Override
+    public boolean bettereyes$isIglooBasement() {
+        return this.bettereyes$iglooBasement;
+    }
+
+    @Override
     public void bettereyes$setIglooBasement(boolean value) {
         this.bettereyes$iglooBasement = value;
     }

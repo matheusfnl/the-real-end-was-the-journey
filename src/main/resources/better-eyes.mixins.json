@@ -5,8 +5,9 @@
 	"mixins": [
 		"ExampleMixin",
 		"StructureTemplateMixin",
-		"StructureTEmplateManagerMixin",
-		"VillagerTradesMixin"
+		"StructureTemplateManagerMixin",
+		"VillagerTradesMixin",
+		"VillagerOfferMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
