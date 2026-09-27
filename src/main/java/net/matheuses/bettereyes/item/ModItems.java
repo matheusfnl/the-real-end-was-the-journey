@@ -24,6 +24,7 @@ public class ModItems {
   public static final Item EYE_02 = registerItem("eye_02", Item::new);
   public static final Item EYE_04 = registerItem("eye_04", Item::new);
   public static final Item EYE_06 = registerItem("eye_06", Item::new);
+  public static final Item EYE_08 = registerItem("eye_08", Item::new);
   public static final Item CONCENTRATED_BROWN_MUSHROOM_SOUP = registerItem("concentrated_brown_mushroom_soup", properties ->
       new Item(properties.stacksTo(1).food(
           new FoodProperties.Builder()
@@ -84,6 +85,7 @@ public class ModItems {
 
     CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
       output.insertBefore(Items.ENDER_EYE, ModItems.BUM_ITEM);
+      output.insertAfter(Items.ENDER_EYE, ModItems.EYE_08);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_06);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_04);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_02);

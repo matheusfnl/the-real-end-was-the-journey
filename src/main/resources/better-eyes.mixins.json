@@ -11,7 +11,8 @@
 		"HeroEffectCycleMixin",
 		"EvokerOriginMixin",
 		"LivingEntityLootMixin",
-		"MooshroomSoupMixin"
+		"MooshroomSoupMixin",
+		"JukeboxPlayableMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
