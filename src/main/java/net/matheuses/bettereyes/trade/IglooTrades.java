@@ -35,13 +35,13 @@ public final class IglooTrades {
             );
 
         if (tradeUsed) {
-            offers.removeIf(offer -> offer.getResult().is(ModItems.EYE_02));
+            offers.removeIf(offer -> offer.getResult().is(ModItems.ICE_APPLE));
             return;
         }
 
         boolean alreadyHasTrade = offers.stream()
             .anyMatch(offer ->
-                offer.getResult().is(ModItems.EYE_02)
+                offer.getResult().is(ModItems.ICE_APPLE)
             );
 
         if (alreadyHasTrade) {
@@ -50,7 +50,7 @@ public final class IglooTrades {
 
         offers.add(new MerchantOffer(
             new ItemCost(Items.EMERALD, 1),
-            new ItemStack(ModItems.EYE_02, 1),
+            new ItemStack(ModItems.ICE_APPLE, 1),
             1,
             5,
             0.05F

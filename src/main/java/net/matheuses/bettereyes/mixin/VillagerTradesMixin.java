@@ -24,7 +24,7 @@ public abstract class VillagerTradesMixin {
     private void bettereyes$removeIglooTradeAfterPurchase(
             MerchantOffer offer,
             CallbackInfo ci) {
-        if (!offer.getResult().is(ModItems.EYE_02)
+        if (!offer.getResult().is(ModItems.ICE_APPLE)
                 || !((Object) this instanceof Villager villager)) {
             return;
         }

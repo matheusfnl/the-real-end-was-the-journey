@@ -15,7 +15,7 @@ public abstract class VillagerOfferMixin {
     private void bettereyes$keepEyeTradeSoldOut(CallbackInfo ci) {
         MerchantOffer offer = (MerchantOffer) (Object) this;
 
-        if (offer.getResult().is(ModItems.EYE_02)) {
+        if (offer.getResult().is(ModItems.ICE_APPLE)) {
             ci.cancel();
         }
     }
