@@ -1,7 +1,9 @@
 package net.matheuses.bettereyes.mixin;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import org.jetbrains.annotations.Nullable;
@@ -36,6 +38,12 @@ public abstract class HeroTradeWithBumMixin {
     @Unique
     private final Map<UUID, Integer> betterEyes$prices = new HashMap<>();
 
+    @Unique
+    private final Set<UUID> betterEyes$customers = new HashSet<>();
+
+    @Unique
+    private final Map<UUID, Long> betterEyes$blockedUntil = new HashMap<>();
+
     @Inject(method = "mobInteract", at = @At("HEAD"))
     private void betterEyes$prepareHeroTrade(
         Player player,
@@ -56,19 +64,32 @@ public abstract class HeroTradeWithBumMixin {
         MerchantOffers heroOffers = new MerchantOffers();
 
         if (player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE)) {
+            UUID playerId = player.getUUID();
+            long currentTick = villager.level().getGameTime();
             int emeraldCost = betterEyes$prices.computeIfAbsent(
                 player.getUUID(),
                 ignored -> villager.getRandom()
                     .nextIntBetweenInclusive(MIN_EMERALD_COST, MAX_EMERALD_COST)
             );
 
-            heroOffers.add(new MerchantOffer(
+            MerchantOffer heroOffer = new MerchantOffer(
                 new ItemCost(Items.EMERALD, emeraldCost),
                 new ItemStack(ModItems.BUM_ITEM),
                 1,
                 0,
                 0.05F
-            ));
+            );
+
+            long blockedUntil =
+                betterEyes$blockedUntil.getOrDefault(playerId, 0L);
+
+            if (currentTick < blockedUntil) {
+                heroOffer.setToOutOfStock();
+            } else {
+                betterEyes$blockedUntil.remove(playerId);
+            }
+
+            heroOffers.add(heroOffer);
         }
 
         villager.setOffers(heroOffers);
@@ -87,6 +108,23 @@ public abstract class HeroTradeWithBumMixin {
             entry.putString("Player", playerId.toString());
             entry.putInt("Price", price);
         });
+
+        ValueOutput.ValueOutputList customers =
+            output.childrenList("betterEyes$heroTradeCustomers");
+
+        betterEyes$customers.forEach(playerId -> {
+            ValueOutput entry = customers.addChild();
+            entry.putString("Player", playerId.toString());
+        });
+
+        ValueOutput.ValueOutputList blocks =
+            output.childrenList("BetterEyesHeroTradeBlocks");
+
+        betterEyes$blockedUntil.forEach((playerId, expirationTick) -> {
+            ValueOutput entry = blocks.addChild();
+            entry.putString("Player", playerId.toString());
+            entry.putLong("Until", expirationTick);
+        });
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
@@ -98,7 +136,7 @@ public abstract class HeroTradeWithBumMixin {
 
         for (
             ValueInput entry :
-            input.childrenListOrEmpty("BetterEyesHeroTradePrices")
+            input.childrenListOrEmpty("betterEyes$heroTradePrices")
         ) {
             String playerId = entry.getStringOr("Player", "");
             int price = entry.getIntOr("Price", MIN_EMERALD_COST);
@@ -107,6 +145,40 @@ public abstract class HeroTradeWithBumMixin {
                 betterEyes$prices.put(UUID.fromString(playerId), price);
             } catch (IllegalArgumentException ignored) {
                 // Ignora UUIDs inválidos em dados corrompidos.
+            }
+        }
+
+        betterEyes$customers.clear();
+
+        for (
+            ValueInput entry :
+            input.childrenListOrEmpty("betterEyes$heroTradeCustomers")
+        ) {
+            String playerId = entry.getStringOr("Player", "");
+
+            try {
+                betterEyes$customers.add(UUID.fromString(playerId));
+            } catch (IllegalArgumentException ignored) {
+                // Ignora UUIDs inválidos.
+            }
+        }
+
+        betterEyes$blockedUntil.clear();
+
+        for (
+            ValueInput entry :
+            input.childrenListOrEmpty("BetterEyesHeroTradeBlocks")
+        ) {
+            String playerId = entry.getStringOr("Player", "");
+            long expirationTick = entry.getLongOr("Until", 0L);
+
+            try {
+                betterEyes$blockedUntil.put(
+                    UUID.fromString(playerId),
+                    expirationTick
+                );
+            } catch (IllegalArgumentException ignored) {
+                // Ignora UUID inválido.
             }
         }
     }
@@ -127,7 +199,37 @@ public abstract class HeroTradeWithBumMixin {
             villager.getTradingPlayer() instanceof ServerPlayer player &&
             !player.hasEffect(MobEffects.HERO_OF_THE_VILLAGE)
         ) {
+            betterEyes$blockedUntil.remove(player.getUUID());
             player.closeContainer();
+        }
+    }
+
+    @Inject(method = "rewardTradeXp", at = @At("TAIL"))
+    private void betterEyes$rememberCustomer(
+        MerchantOffer offer,
+        CallbackInfo callback
+    ) {
+        Villager villager = (Villager) (Object) this;
+
+        if (
+          !offer.getResult().is(ModItems.BUM_ITEM) ||
+          !(villager.getTradingPlayer() instanceof ServerPlayer player)
+        ) {
+            return;
+        }
+
+        var heroEffect =
+          player.getEffect(MobEffects.HERO_OF_THE_VILLAGE);
+
+        if (heroEffect != null) {
+            long expirationTick =
+                villager.level().getGameTime() +
+                heroEffect.getDuration();
+
+            betterEyes$blockedUntil.put(
+                player.getUUID(),
+                expirationTick
+            );
         }
     }
 }
