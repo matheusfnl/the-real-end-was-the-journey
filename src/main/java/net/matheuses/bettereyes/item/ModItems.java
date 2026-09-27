@@ -11,6 +11,8 @@ import net.minecraft.world.item.Item;
 import java.util.function.Function;
 
 public class ModItems {
+  public static final Item BUM_ITEM = registerItem("bum_item", Item::new);
+
   private static Item registerItem(String name, Function<Item.Properties, Item> function) {
     Identifier id = BetterEyes.id(name);
     ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, id);

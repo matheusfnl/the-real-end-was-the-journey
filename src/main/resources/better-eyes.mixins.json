@@ -3,7 +3,8 @@
 	"package": "net.matheuses.bettereyes.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"HeroTradeWithBumMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
