@@ -3,7 +3,10 @@
 	"package": "net.matheuses.bettereyes.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"StructureTemplateMixin",
+		"StructureTEmplateManagerMixin",
+		"VillagerTradesMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
