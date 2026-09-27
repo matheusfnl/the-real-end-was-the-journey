@@ -5,7 +5,9 @@
 	"mixins": [
 		"ExampleMixin",
 		"HeroTradeWithBumMixin",
-		"HeroEffectCycleMixin"
+		"HeroEffectCycleMixin",
+		"EvokerOriginMixin",
+  		"LivingEntityLootMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
