@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "better-eyes:ice_apple",
+    "minecraft:packed_ice"
+  ],
+  "result": {
+    "id": "better-eyes:eye_04",
+    "count": 1
+  }
+}

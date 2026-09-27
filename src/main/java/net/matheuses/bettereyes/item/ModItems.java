@@ -22,6 +22,7 @@ import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 public class ModItems {
   public static final Item BUM_ITEM = registerItem("bum_item", Item::new);
   public static final Item EYE_02 = registerItem("eye_02", Item::new);
+  public static final Item EYE_04 = registerItem("eye_04", Item::new);
 
   public static final Item ICE_APPLE = registerItem("ice_apple", properties ->
       new Item(properties.food(
@@ -51,6 +52,7 @@ public class ModItems {
 
     CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
       output.insertBefore(Items.ENDER_EYE, ModItems.BUM_ITEM);
+      output.insertAfter(Items.ENDER_EYE, ModItems.EYE_04);
       output.insertAfter(Items.ENDER_EYE, ModItems.EYE_02);
     });
 
