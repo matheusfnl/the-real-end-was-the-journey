@@ -69,7 +69,15 @@ public class ModItems {
 
     public static final Item EYE_02 = registerItem("eye_02", Item::new);
     public static final Item EYE_04 = registerItem("eye_04", Item::new);
-    public static final Item EYE_06 = registerItem("eye_06", Item::new);
+    public static final Item EYE_06 = registerItem("eye_06", properties -> new Item(properties.food(
+            new FoodProperties.Builder()
+                    .nutrition(6)
+                    .saturationModifier(0.6F)
+                    .alwaysEdible()
+                    .build(),
+            Consumables.defaultFood()
+                    .onConsume(new TeleportRandomlyConsumeEffect())
+                    .build())));
     public static final Item EYE_08 = registerItem("eye_08", Item::new);
 
     public static final Item EYE_01 = registerItem("eye_01", Item::new);
