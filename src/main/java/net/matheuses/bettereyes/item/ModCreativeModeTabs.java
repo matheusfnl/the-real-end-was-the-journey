@@ -32,6 +32,7 @@ public class ModCreativeModeTabs {
                             output.accept(ModItems.EYE_07);
                             output.accept(ModItems.EYE_08);
                             output.accept(ModItems.EYE_09);
+                            output.accept(ModItems.EYE_10);
                             output.accept(ModItems.EYE_11);
                             output.accept(ModItems.ICE_APPLE);
                             output.accept(ModItems.CONCENTRATED_BROWN_MUSHROOM_SOUP);

@@ -1,15 +1,23 @@
 package net.matheuses.bettereyes.recipe;
 
+import java.util.List;
+
 import com.mojang.serialization.MapCodec;
 import net.matheuses.bettereyes.item.ModItems;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.PlacementInfo;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.display.RecipeDisplay;
+import net.minecraft.world.item.crafting.display.ShapelessCraftingRecipeDisplay;
+import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.minecraft.world.level.Level;
 
 public final class Eye05Recipe extends CustomRecipe {
@@ -85,5 +93,41 @@ public final class Eye05Recipe extends CustomRecipe {
     @Override
     public RecipeSerializer<? extends CustomRecipe> getSerializer() {
         return SERIALIZER;
+    }
+
+    private static List<Ingredient> ingredients() {
+        return List.of(
+                Ingredient.of(Items.ENDER_PEARL),
+                Ingredient.of(Items.ARMADILLO_SCUTE),
+                Ingredient.of(Items.GOAT_HORN),
+                Ingredient.of(Items.CREAKING_HEART),
+                Ingredient.of(Items.TOTEM_OF_UNDYING),
+                Ingredient.of(Items.TURTLE_SCUTE));
+    }
+
+    @Override
+    public boolean isSpecial() {
+        return false;
+    }
+
+    @Override
+    public boolean showNotification() {
+        return true;
+    }
+
+    @Override
+    public PlacementInfo placementInfo() {
+        return PlacementInfo.create(ingredients());
+    }
+
+    @Override
+    public List<RecipeDisplay> display() {
+        return List.of(new ShapelessCraftingRecipeDisplay(
+                ingredients().stream()
+                        .map(Ingredient::display)
+                        .toList(),
+                new SlotDisplay.ItemStackSlotDisplay(
+                        new ItemStackTemplate(ModItems.EYE_05)),
+                new SlotDisplay.ItemSlotDisplay(Items.CRAFTING_TABLE)));
     }
 }

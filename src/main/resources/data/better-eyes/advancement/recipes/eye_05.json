@@ -1,0 +1,25 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_special_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:totem_of_undying"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipes": "better-eyes:eye_05"
+      }
+    }
+  },
+  "requirements": [["has_special_item", "has_the_recipe"]],
+  "rewards": {
+    "recipes": ["better-eyes:eye_05"]
+  }
+}
