@@ -1,5 +1,9 @@
 # Better Eyes
 
+Better Eyes is a Minecraft mod that adds new Eyes of Ender crafted with items
+found across different biomes, encouraging players to explore the world before
+reaching the endgame.
+
 ## Setup
 
 Install a **JDK 25** and set `JAVA_HOME` to its installation directory (not its
