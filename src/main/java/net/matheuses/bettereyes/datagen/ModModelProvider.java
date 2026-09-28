@@ -27,6 +27,7 @@ public class ModModelProvider extends FabricModelProvider {
     itemModelGenerators.generateFlatItem(ModItems.EYE_07, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.EYE_08, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.EYE_09, ModelTemplates.FLAT_ITEM);
+    itemModelGenerators.generateFlatItem(ModItems.EYE_10, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.EYE_11, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.ICE_APPLE, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.CONCENTRATED_BROWN_MUSHROOM_SOUP, ModelTemplates.FLAT_ITEM);

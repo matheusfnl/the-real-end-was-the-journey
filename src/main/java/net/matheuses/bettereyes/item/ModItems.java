@@ -67,8 +67,28 @@ public class ModItems {
                             new MobEffectInstance(MobEffects.STRENGTH, 6000, 1))))
                     .build())));
 
+    public static final Item EYE_01 = registerItem("eye_01", Item::new);
     public static final Item EYE_02 = registerItem("eye_02", Item::new);
-    public static final Item EYE_04 = registerItem("eye_04", Item::new);
+    public static final Item EYE_03 = registerItem("eye_03", Item::new);
+    public static final Item EYE_04 = registerItem("eye_04", properties -> new Item(properties.food(
+            new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationModifier(1.2F)
+                    .build(),
+            Consumables.defaultFood()
+                    .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
+                            new MobEffectInstance(MobEffects.SLOWNESS, 6000, 0),
+                            new MobEffectInstance(MobEffects.REGENERATION, 6000, 2),
+                            new MobEffectInstance(MobEffects.STRENGTH, 6000, 1))))
+                    .onConsume(new TeleportRandomlyConsumeEffect())
+                    .build())));
+
+    public static final Item EYE_05 = registerItem("eye_05", properties -> new InstrumentItem(properties
+        .stacksTo(1)
+        .component(
+                DataComponents.DEATH_PROTECTION,
+                createEye05DeathProtection())));
+
     public static final Item EYE_06 = registerItem("eye_06", properties -> new Item(properties.food(
             new FoodProperties.Builder()
                     .nutrition(6)
@@ -78,17 +98,11 @@ public class ModItems {
             Consumables.defaultFood()
                     .onConsume(new TeleportRandomlyConsumeEffect())
                     .build())));
-    public static final Item EYE_08 = registerItem("eye_08", Item::new);
 
-    public static final Item EYE_01 = registerItem("eye_01", Item::new);
-    public static final Item EYE_03 = registerItem("eye_03", Item::new);
-    public static final Item EYE_05 = registerItem("eye_05", properties -> new InstrumentItem(properties
-            .stacksTo(1)
-            .component(
-                    DataComponents.DEATH_PROTECTION,
-                    createEye05DeathProtection())));
     public static final Item EYE_07 = registerItem("eye_07", Item::new);
+    public static final Item EYE_08 = registerItem("eye_08", Item::new);
     public static final Item EYE_09 = registerItem("eye_09", Item::new);
+    public static final Item EYE_10 = registerItem("eye_10", Item::new);
     public static final Item EYE_11 = registerItem("eye_11", properties -> new Item(properties.food(
             new FoodProperties.Builder()
                     .nutrition(6)
@@ -124,6 +138,7 @@ public class ModItems {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
             output.insertBefore(Items.ENDER_EYE, ModItems.BUM_ITEM);
             output.insertAfter(Items.ENDER_EYE, ModItems.EYE_11);
+            output.insertAfter(Items.ENDER_EYE, ModItems.EYE_10);
             output.insertAfter(Items.ENDER_EYE, ModItems.EYE_09);
             output.insertAfter(Items.ENDER_EYE, ModItems.EYE_08);
             output.insertAfter(Items.ENDER_EYE, ModItems.EYE_07);

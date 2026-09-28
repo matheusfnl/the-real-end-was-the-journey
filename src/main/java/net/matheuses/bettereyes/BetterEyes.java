@@ -1,6 +1,7 @@
 package net.matheuses.bettereyes;
 
 import net.fabricmc.api.ModInitializer;
+import net.matheuses.bettereyes.item.ModCreativeModeTabs;
 import net.matheuses.bettereyes.item.ModItems;
 import net.matheuses.bettereyes.data.ModAttachments;
 import net.matheuses.bettereyes.recipe.ModRecipes;
@@ -30,6 +31,7 @@ public class BetterEyes implements ModInitializer {
 		ModAttachments.initialize();
 		ModItems.registerModItems();
 		ModRecipes.registerModRecipes();
+		ModCreativeModeTabs.registerModCreativeModeTabs();
 	}
 
 	public static Identifier id(String path) {
