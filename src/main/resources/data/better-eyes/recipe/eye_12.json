@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:dune_armor_trim_smithing_template",
+    "minecraft:wild_armor_trim_smithing_template"
+  ],
+  "result": {
+    "id": "better-eyes:eye_12",
+    "count": 1
+  }
+}
