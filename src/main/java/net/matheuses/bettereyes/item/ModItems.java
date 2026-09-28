@@ -69,7 +69,10 @@ public class ModItems {
 
     public static final Item EYE_01 = registerItem("eye_01", Item::new);
     public static final Item EYE_02 = registerItem("eye_02", Item::new);
-    public static final Item EYE_03 = registerItem("eye_03", Item::new);
+    public static final Item EYE_03 = registerItem("eye_03", properties -> new Item(properties.component(
+        DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
+    ));
+
     public static final Item EYE_04 = registerItem("eye_04", properties -> new Item(properties.food(
             new FoodProperties.Builder()
                     .nutrition(4)
