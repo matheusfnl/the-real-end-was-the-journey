@@ -119,6 +119,8 @@ public class ModItems {
                     .onConsume(new TeleportRandomlyConsumeEffect())
                     .build())));
 
+    public static final Item EYE_12 = registerItem("eye_12", Item::new);
+
     private static DeathProtection createEye05DeathProtection() {
         List<ConsumeEffect> effects = new ArrayList<>(
                 DeathProtection.TOTEM_OF_UNDYING.deathEffects());
@@ -140,6 +142,7 @@ public class ModItems {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
             output.insertBefore(Items.ENDER_EYE, ModItems.BUM_ITEM);
+            output.insertAfter(Items.ENDER_EYE, ModItems.EYE_12);
             output.insertAfter(Items.ENDER_EYE, ModItems.EYE_11);
             output.insertAfter(Items.ENDER_EYE, ModItems.EYE_10);
             output.insertAfter(Items.ENDER_EYE, ModItems.EYE_09);
