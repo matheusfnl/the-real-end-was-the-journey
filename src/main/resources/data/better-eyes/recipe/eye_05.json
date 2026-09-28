@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:armadillo_scute",
+    "minecraft:goat_horn",
+    "minecraft:creaking_heart",
+    "minecraft:totem_of_undying",
+    "minecraft:turtle_scute"
+  ],
+  "result": {
+    "id": "better-eyes:eye_05",
+    "count": 1
+  }
+}
