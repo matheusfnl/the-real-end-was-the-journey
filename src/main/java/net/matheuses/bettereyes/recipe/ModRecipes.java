@@ -13,7 +13,10 @@ public final class ModRecipes {
         Registry.register(
                 BuiltInRegistries.RECIPE_SERIALIZER,
                 BetterEyes.id("eye_08_different_discs"),
-                Eye08Recipe.SERIALIZER
-        );
+                Eye08Recipe.SERIALIZER);
+        Registry.register(
+                BuiltInRegistries.RECIPE_SERIALIZER,
+                BetterEyes.id("eye_05_with_horn"),
+                Eye05Recipe.SERIALIZER);
     }
 }
