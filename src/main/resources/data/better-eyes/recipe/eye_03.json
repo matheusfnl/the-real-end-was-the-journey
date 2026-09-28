@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:nether_star",
+    "minecraft:echo_shard"
+  ],
+  "result": {
+    "id": "better-eyes:eye_03",
+    "count": 1
+  }
+}

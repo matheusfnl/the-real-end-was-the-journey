@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:netherite_upgrade_smithing_template",
+    "minecraft:music_disc_pigstep"
+  ],
+  "result": {
+    "id": "better-eyes:eye_09",
+    "count": 1
+  }
+}

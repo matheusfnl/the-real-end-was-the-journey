@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:ominous_trial_key",
+    "better-eyes:bum_item"
+  ],
+  "result": {
+    "id": "better-eyes:eye_07",
+    "count": 1
+  }
+}

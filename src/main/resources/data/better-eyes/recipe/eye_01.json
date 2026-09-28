@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:nautilus_shell",
+    "minecraft:heart_of_the_sea",
+    "minecraft:sponge"
+  ],
+  "result": {
+    "id": "better-eyes:eye_01",
+    "count": 1
+  }
+}

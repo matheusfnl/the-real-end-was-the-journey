@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:golden_carrot",
+    "minecraft:glistering_melon_slice",
+    "minecraft:golden_apple",
+    "minecraft:beetroot",
+    "minecraft:glow_berries",
+    "minecraft:sweet_berries",
+    "minecraft:potato"
+  ],
+  "result": {
+    "id": "better-eyes:eye_11",
+    "count": 1
+  }
+}

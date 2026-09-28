@@ -18,10 +18,16 @@ public class ModModelProvider extends FabricModelProvider {
 
   @Override
   public void generateItemModels(ItemModelGenerators itemModelGenerators) {
+    itemModelGenerators.generateFlatItem(ModItems.EYE_01, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.EYE_02, ModelTemplates.FLAT_ITEM);
+    itemModelGenerators.generateFlatItem(ModItems.EYE_03, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.EYE_04, ModelTemplates.FLAT_ITEM);
+    itemModelGenerators.generateFlatItem(ModItems.EYE_05, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.EYE_06, ModelTemplates.FLAT_ITEM);
+    itemModelGenerators.generateFlatItem(ModItems.EYE_07, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.EYE_08, ModelTemplates.FLAT_ITEM);
+    itemModelGenerators.generateFlatItem(ModItems.EYE_09, ModelTemplates.FLAT_ITEM);
+    itemModelGenerators.generateFlatItem(ModItems.EYE_11, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.ICE_APPLE, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.CONCENTRATED_BROWN_MUSHROOM_SOUP, ModelTemplates.FLAT_ITEM);
     itemModelGenerators.generateFlatItem(ModItems.CONCENTRATED_RED_MUSHROOM_SOUP, ModelTemplates.FLAT_ITEM);
