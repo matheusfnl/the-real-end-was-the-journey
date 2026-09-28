@@ -22,5 +22,9 @@ public final class ModRecipes {
                 BuiltInRegistries.RECIPE_SERIALIZER,
                 BetterEyes.id("eye_06_with_stew_effect"),
                 Eye06Recipe.SERIALIZER);
+        Registry.register(
+                BuiltInRegistries.RECIPE_SERIALIZER,
+                BetterEyes.id("eye_10_different_leaves"),
+                Eye10Recipe.SERIALIZER);
     }
 }
