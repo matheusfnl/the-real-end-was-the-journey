@@ -5,8 +5,12 @@
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
-          "minecraft:dune_armor_trim_smithing_template",
-          "minecraft:wild_armor_trim_smithing_template"
+          {
+            "items": [
+              "minecraft:dune_armor_trim_smithing_template",
+              "minecraft:wild_armor_trim_smithing_template"
+            ]
+          }
         ]
       }
     },
