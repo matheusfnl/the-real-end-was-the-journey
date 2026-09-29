@@ -1,5 +1,5 @@
 {
-  "parent": "better-eyes:exploration/hunt/hatch_turtle_egg",
+  "parent": "better-eyes:exploration/hunt/place_turtle_egg",
   "display": {
     "icon": {"id": "minecraft:turtle_scute"},
     "title": {"translate": "advancements.better-eyes.exploration.hunt.get_turtle_scute.title"},
@@ -12,7 +12,7 @@
         "items": [{"items": "minecraft:turtle_scute"}],
         "player": {
           "type": "minecraft:entity_properties", "entity": "this",
-          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/hunt/hatch_turtle_egg": true}}}
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/hunt/place_turtle_egg": true}}}
         }
       }
     }
