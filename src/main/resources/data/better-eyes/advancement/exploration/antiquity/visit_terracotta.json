@@ -1,0 +1,24 @@
+{
+  "parent": "better-eyes:exploration/root",
+  "display": {
+    "icon": {"id": "minecraft:terracotta"},
+    "title": {"translate": "advancements.better-eyes.exploration.antiquity.visit_terracotta.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.antiquity.visit_terracotta.description"}
+  },
+  "criteria": {
+    "visit_terracotta_biome": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {"biomes": "#minecraft:is_badlands"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/root": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["visit_terracotta_biome"]]
+}

@@ -1,0 +1,23 @@
+{
+  "parent": "better-eyes:exploration/combat/defeat_wither",
+  "display": {
+    "icon": {"id": "better-eyes:eye_03"},
+    "title": {"translate": "advancements.better-eyes.exploration.combat.craft_eye_03.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.combat.craft_eye_03.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_03": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_03",
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/combat/defeat_wither": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["craft_eye_03"]]
+}
