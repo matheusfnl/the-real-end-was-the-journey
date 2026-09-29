@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/end_portal_frame_filled",
+  "textures": {
+    "eye": "minecraft:block/oxidized_copper"
+  }
+}
