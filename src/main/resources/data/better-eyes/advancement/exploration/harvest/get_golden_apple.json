@@ -1,0 +1,19 @@
+{
+  "parent": "better-eyes:exploration/harvest/get_apple",
+  "display": {
+    "icon": {"id": "minecraft:golden_apple"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_golden_apple.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_golden_apple.description"}
+  },
+  "criteria": {
+    "get_golden_apple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:golden_apple"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/harvest/get_apple": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_golden_apple"]],
+  "rewards": {"recipes": ["better-eyes:eye_11"]}
+}

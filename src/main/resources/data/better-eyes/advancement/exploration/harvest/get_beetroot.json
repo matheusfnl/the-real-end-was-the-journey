@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/harvest/plant_seed",
+  "display": {
+    "icon": {"id": "minecraft:beetroot"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_beetroot.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_beetroot.description"}
+  },
+  "criteria": {
+    "get_beetroot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:beetroot"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/harvest/plant_seed": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_beetroot"]]
+}

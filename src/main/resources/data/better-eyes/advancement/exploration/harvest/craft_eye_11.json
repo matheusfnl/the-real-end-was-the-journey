@@ -1,0 +1,19 @@
+{
+  "parent": "better-eyes:exploration/harvest/get_golden_apple",
+  "display": {
+    "icon": {"id": "better-eyes:eye_11"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.craft_eye_11.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.craft_eye_11.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_11": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_11",
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/harvest/get_golden_apple": true}}}}
+      }
+    }
+  },
+  "requirements": [["craft_eye_11"]]
+}

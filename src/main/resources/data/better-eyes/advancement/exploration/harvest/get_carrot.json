@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/harvest/plant_seed",
+  "display": {
+    "icon": {"id": "minecraft:carrot"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_carrot.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_carrot.description"}
+  },
+  "criteria": {
+    "get_carrot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:carrot"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/harvest/plant_seed": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_carrot"]]
+}

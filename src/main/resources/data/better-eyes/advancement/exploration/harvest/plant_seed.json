@@ -1,0 +1,24 @@
+{
+  "parent": "better-eyes:exploration/paths/harvest",
+  "display": {
+    "icon": {"id": "minecraft:wheat_seeds"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.plant_seed.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.plant_seed.description"}
+  },
+  "criteria": {
+    "plant_crop": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:match_block",
+          "blocks": "#minecraft:crops"
+        },
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/harvest": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["plant_crop"]]
+}

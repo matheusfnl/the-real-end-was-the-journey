@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/harvest/get_carrot",
+  "display": {
+    "icon": {"id": "minecraft:golden_carrot"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_golden_carrot.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_golden_carrot.description"}
+  },
+  "criteria": {
+    "get_golden_carrot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:golden_carrot"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/harvest/get_carrot": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_golden_carrot"]]
+}
