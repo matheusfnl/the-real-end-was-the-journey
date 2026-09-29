@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/temples/explore_jungle_temple",
+  "display": {
+    "icon": {"id": "minecraft:wild_armor_trim_smithing_template"},
+    "title": {"translate": "advancements.better-eyes.exploration.temples.get_wild_trim.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.temples.get_wild_trim.description"}
+  },
+  "criteria": {
+    "get_wild_trim": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:wild_armor_trim_smithing_template"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/temples/explore_jungle_temple": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_wild_trim"]],
+  "rewards": {"recipes": ["better-eyes:eye_12"]}
+}

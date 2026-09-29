@@ -1,0 +1,29 @@
+{
+  "parent": "better-eyes:exploration/temples/get_wild_trim",
+  "display": {
+    "icon": {"id": "better-eyes:eye_12"},
+    "title": {"translate": "advancements.better-eyes.exploration.temples.craft_eye_12.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.temples.craft_eye_12.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_12": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_12",
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {
+            "type_specific/player": {
+              "advancements": {
+                "better-eyes:exploration/temples/get_dune_trim": true,
+                "better-eyes:exploration/temples/get_wild_trim": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["craft_eye_12"]]
+}

@@ -2,7 +2,7 @@
   "parent": "better-eyes:exploration/paths/sea",
   "display": {
     "icon": {
-      "id": "minecraft:trident"
+      "id": "minecraft:kelp"
     },
     "title": {
       "translate": "advancements.better-eyes.exploration.ocean.visit.title"
