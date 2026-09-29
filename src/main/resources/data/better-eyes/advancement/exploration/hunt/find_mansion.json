@@ -1,0 +1,23 @@
+{
+  "parent": "better-eyes:exploration/paths/hunt",
+  "display": {
+    "icon": {"id": "minecraft:dark_oak_door"},
+    "title": {"translate": "advancements.better-eyes.exploration.hunt.find_mansion.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.hunt.find_mansion.description"}
+  },
+  "criteria": {
+    "find_mansion": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {
+            "minecraft:location": {"structures": "minecraft:mansion"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/paths/hunt": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["find_mansion"]]
+}

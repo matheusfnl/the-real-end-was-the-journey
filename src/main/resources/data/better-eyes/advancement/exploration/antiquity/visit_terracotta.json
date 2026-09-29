@@ -1,5 +1,5 @@
 {
-  "parent": "better-eyes:exploration/root",
+  "parent": "better-eyes:exploration/paths/archaeology",
   "display": {
     "icon": {"id": "minecraft:terracotta"},
     "title": {"translate": "advancements.better-eyes.exploration.antiquity.visit_terracotta.title"},

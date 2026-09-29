@@ -1,5 +1,5 @@
 {
-  "parent": "better-eyes:exploration/root",
+  "parent": "better-eyes:exploration/paths/blizzard",
   "display": {
     "icon": {"id": "minecraft:powder_snow_bucket"},
     "title": {"translate": "advancements.better-eyes.exploration.cold.visit_snowy_biome.title"},

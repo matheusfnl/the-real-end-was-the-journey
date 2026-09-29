@@ -1,5 +1,5 @@
 {
-  "parent": "better-eyes:exploration/root",
+  "parent": "better-eyes:exploration/paths/bosses",
   "display": {
     "icon": {"id": "minecraft:wither_skeleton_skull"},
     "title": {"translate": "advancements.better-eyes.exploration.combat.kill_wither_skeleton.title"},

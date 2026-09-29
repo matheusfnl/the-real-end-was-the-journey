@@ -1,5 +1,5 @@
 {
-  "parent": "better-eyes:exploration/root",
+  "parent": "better-eyes:exploration/paths/archaeology",
   "display": {
     "icon": {"id": "minecraft:brush"},
     "title": {"translate": "advancements.better-eyes.exploration.antiquity.explore_ruins.title"},

@@ -1,5 +1,5 @@
 {
-  "parent": "better-eyes:exploration/root",
+  "parent": "better-eyes:exploration/paths/sea",
   "display": {
     "icon": {
       "id": "minecraft:trident"

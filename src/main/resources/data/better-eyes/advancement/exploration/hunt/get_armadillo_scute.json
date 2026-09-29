@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/paths/hunt",
+  "display": {
+    "icon": {"id": "minecraft:armadillo_scute"},
+    "title": {"translate": "advancements.better-eyes.exploration.hunt.get_armadillo_scute.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.hunt.get_armadillo_scute.description"}
+  },
+  "criteria": {
+    "get_armadillo_scute": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:armadillo_scute"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/hunt": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_armadillo_scute"]]
+}

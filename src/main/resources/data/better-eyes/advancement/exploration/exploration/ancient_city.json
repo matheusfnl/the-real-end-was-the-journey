@@ -1,5 +1,5 @@
 {
-  "parent": "better-eyes:exploration/root",
+  "parent": "better-eyes:exploration/paths/bosses",
   "display": {
     "icon": {"id": "minecraft:chest"},
     "title": {"translate": "advancements.better-eyes.exploration.exploration.ancient_city.title"},

@@ -11,6 +11,7 @@
     "HeroEffectCycleMixin",
     "EvokerOriginMixin",
     "LivingEntityLootMixin",
+    "TurtleEggHatchMixin",
     "MooshroomSoupMixin",
     "JukeboxPlayableMixin",
     "EndPortalFrameBlockMixin",

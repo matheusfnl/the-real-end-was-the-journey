@@ -1,0 +1,23 @@
+{
+  "parent": "better-eyes:exploration/paths/hunt",
+  "display": {
+    "icon": {"id": "minecraft:pale_oak_sapling"},
+    "title": {"translate": "advancements.better-eyes.exploration.hunt.visit_pale_garden.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.hunt.visit_pale_garden.description"}
+  },
+  "criteria": {
+    "visit_pale_garden": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {
+            "minecraft:location": {"biomes": "minecraft:pale_garden"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/paths/hunt": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["visit_pale_garden"]]
+}
