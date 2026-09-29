@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/paths/mushrooms",
+  "display": {
+    "icon": {"id": "minecraft:mushroom_stew"},
+    "title": {"translate": "advancements.better-eyes.exploration.mushrooms.get_mushroom_stew.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.mushrooms.get_mushroom_stew.description"}
+  },
+  "criteria": {
+    "get_mushroom_stew": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:mushroom_stew"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/mushrooms": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_mushroom_stew"]]
+}

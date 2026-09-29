@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/paths/mushrooms",
+  "display": {
+    "icon": {"id": "minecraft:beetroot_soup"},
+    "title": {"translate": "advancements.better-eyes.exploration.mushrooms.get_beetroot_soup.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.mushrooms.get_beetroot_soup.description"}
+  },
+  "criteria": {
+    "get_beetroot_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:beetroot_soup"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/mushrooms": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_beetroot_soup"]]
+}
