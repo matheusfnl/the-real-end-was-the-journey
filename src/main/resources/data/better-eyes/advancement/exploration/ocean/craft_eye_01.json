@@ -1,0 +1,37 @@
+{
+  "parent": "better-eyes:exploration/ocean/treasure",
+  "display": {
+    "icon": {
+      "id": "better-eyes:eye_01"
+    },
+    "title": {
+      "translate": "advancements.better-eyes.exploration.ocean.craft_eye_01.title"
+    },
+    "description": {
+      "translate": "advancements.better-eyes.exploration.ocean.craft_eye_01.description"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_01": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_01",
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type_specific/player": {
+              "advancements": {
+                "better-eyes:exploration/ocean/treasure": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["craft_eye_01"]
+  ]
+}

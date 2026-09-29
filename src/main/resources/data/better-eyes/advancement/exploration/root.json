@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:ender_pearl"
+    },
+    "title": {
+      "translate": "advancements.better-eyes.exploration.root.title"
+    },
+    "description": {
+      "translate": "advancements.better-eyes.exploration.root.description"
+    },
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_ender_pearl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:ender_pearl"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["get_ender_pearl"]
+  ]
+}

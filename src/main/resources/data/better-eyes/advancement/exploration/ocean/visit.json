@@ -1,0 +1,38 @@
+{
+  "parent": "better-eyes:exploration/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:heart_of_the_sea"
+    },
+    "title": {
+      "translate": "advancements.better-eyes.exploration.ocean.visit.title"
+    },
+    "description": {
+      "translate": "advancements.better-eyes.exploration.ocean.visit.description"
+    }
+  },
+  "criteria": {
+    "visit_ocean": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "#minecraft:is_ocean"
+            },
+            "type_specific/player": {
+              "advancements": {
+                "better-eyes:exploration/root": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["visit_ocean"]
+  ]
+}

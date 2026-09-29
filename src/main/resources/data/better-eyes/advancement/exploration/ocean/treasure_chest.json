@@ -1,0 +1,36 @@
+{
+  "parent": "better-eyes:exploration/ocean/visit",
+  "display": {
+    "icon": {
+      "id": "minecraft:map"
+    },
+    "title": {
+      "translate": "advancements.better-eyes.exploration.ocean.treasure_chest.title"
+    },
+    "description": {
+      "translate": "advancements.better-eyes.exploration.ocean.treasure_chest.description"
+    }
+  },
+  "criteria": {
+    "open_buried_treasure": {
+      "trigger": "minecraft:player_generates_container_loot",
+      "conditions": {
+        "loot_tables": "minecraft:chests/buried_treasure",
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type_specific/player": {
+              "advancements": {
+                "better-eyes:exploration/ocean/visit": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["open_buried_treasure"]
+  ]
+}
