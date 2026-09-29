@@ -15,6 +15,21 @@
       "model": "minecraft:block/end_portal_frame",
       "y": 270
     },
+    "better_eyes_eye=0,eye=false,facing=south": {
+      "model": "minecraft:block/end_portal_frame"
+    },
+    "better_eyes_eye=0,eye=false,facing=west": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 90
+    },
+    "better_eyes_eye=0,eye=false,facing=north": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 180
+    },
+    "better_eyes_eye=0,eye=false,facing=east": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 270
+    },
 
     "better_eyes_eye=1,eye=true,facing=south": {
       "model": "better-eyes:block/end_portal_frame_eye_01"
