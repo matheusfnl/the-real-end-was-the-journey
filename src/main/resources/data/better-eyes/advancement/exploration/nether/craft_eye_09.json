@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/nether/get_pigstep",
+  "display": {
+    "icon": {"id": "better-eyes:eye_09"},
+    "title": {"translate": "advancements.better-eyes.exploration.nether.craft_eye_09.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.nether.craft_eye_09.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_09": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_09",
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/nether/get_pigstep": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["craft_eye_09"]]
+}

@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/nether/explore_bastion",
+  "display": {
+    "icon": {"id": "minecraft:music_disc_pigstep"},
+    "title": {"translate": "advancements.better-eyes.exploration.nether.get_pigstep.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.nether.get_pigstep.description"}
+  },
+  "criteria": {
+    "get_pigstep": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:music_disc_pigstep"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/nether/explore_bastion": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_pigstep"]],
+  "rewards": {"recipes": ["better-eyes:eye_09"]}
+}

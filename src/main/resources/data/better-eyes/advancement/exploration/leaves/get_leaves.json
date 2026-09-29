@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/paths/leaves",
+  "display": {
+    "icon": {"id": "minecraft:oak_leaves"},
+    "title": {"translate": "advancements.better-eyes.exploration.leaves.get_leaves.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.leaves.get_leaves.description"}
+  },
+  "criteria": {
+    "get_leaves": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "#minecraft:leaves"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/leaves": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_leaves"]],
+  "rewards": {"recipes": ["better-eyes:eye_10"]}
+}
