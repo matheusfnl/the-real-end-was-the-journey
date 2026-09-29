@@ -16,6 +16,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.InstrumentItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -26,7 +27,11 @@ import net.minecraft.world.item.consume_effects.ConsumeEffect;
 import net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect;
 
 public class ModItems {
-    public static final Item BUM_ITEM = registerItem("bum_item", Item::new);
+    public static final Item BUM_ITEM = registerItem(
+        "bum_item",
+        properties -> new Item(properties.rarity(Rarity.UNCOMMON))
+    );
+
 
     public static final Item CONCENTRATED_BROWN_MUSHROOM_SOUP = registerItem("concentrated_brown_mushroom_soup",
             properties -> new Item(properties.stacksTo(1).food(
@@ -55,7 +60,9 @@ public class ModItems {
                             .build())
                     .usingConvertsTo(Items.BOWL)));
 
-    public static final Item ICE_APPLE = registerItem("ice_apple", properties -> new Item(properties.food(
+    public static final Item ICE_APPLE = registerItem("ice_apple", properties -> new Item(properties
+        .rarity(Rarity.RARE)
+        .food(
             new FoodProperties.Builder()
                     .nutrition(4)
                     .saturationModifier(1.2F)
@@ -67,13 +74,21 @@ public class ModItems {
                             new MobEffectInstance(MobEffects.STRENGTH, 6000, 1))))
                     .build())));
 
-    public static final Item EYE_01 = registerItem("eye_01", Item::new);
-    public static final Item EYE_02 = registerItem("eye_02", Item::new);
-    public static final Item EYE_03 = registerItem("eye_03", properties -> new Item(properties.component(
+    public static final Item EYE_01 = registerItem(
+        "eye_01",
+        properties -> new Item(properties.rarity(Rarity.UNCOMMON))
+    );
+
+    public static final Item EYE_02 = registerItem(
+        "eye_02",
+        properties -> new Item(properties.rarity(Rarity.UNCOMMON))
+    );
+
+    public static final Item EYE_03 = registerItem("eye_03", properties -> new Item(properties.rarity(Rarity.RARE).component(
         DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
     ));
 
-    public static final Item EYE_04 = registerItem("eye_04", properties -> new Item(properties.food(
+    public static final Item EYE_04 = registerItem("eye_04", properties -> new Item(properties.rarity(Rarity.RARE).food(
             new FoodProperties.Builder()
                     .nutrition(4)
                     .saturationModifier(1.2F)
@@ -87,12 +102,13 @@ public class ModItems {
                     .build())));
 
     public static final Item EYE_05 = registerItem("eye_05", properties -> new InstrumentItem(properties
+        .rarity(Rarity.UNCOMMON)
         .stacksTo(1)
         .component(
                 DataComponents.DEATH_PROTECTION,
                 createEye05DeathProtection())));
 
-    public static final Item EYE_06 = registerItem("eye_06", properties -> new Item(properties.food(
+    public static final Item EYE_06 = registerItem("eye_06", properties -> new Item(properties.rarity(Rarity.UNCOMMON).food(
             new FoodProperties.Builder()
                     .nutrition(6)
                     .saturationModifier(0.6F)
@@ -102,9 +118,21 @@ public class ModItems {
                     .onConsume(new TeleportRandomlyConsumeEffect())
                     .build())));
 
-    public static final Item EYE_07 = registerItem("eye_07", Item::new);
-    public static final Item EYE_08 = registerItem("eye_08", Item::new);
-    public static final Item EYE_09 = registerItem("eye_09", Item::new);
+    public static final Item EYE_07 = registerItem(
+        "eye_07",
+        properties -> new Item(properties.rarity(Rarity.UNCOMMON))
+    );
+
+    public static final Item EYE_08 = registerItem(
+        "eye_08",
+        properties -> new Item(properties.rarity(Rarity.RARE))
+    );
+
+    public static final Item EYE_09 = registerItem(
+        "eye_09",
+        properties -> new Item(properties.rarity(Rarity.RARE))
+    );
+
     public static final Item EYE_10 = registerItem("eye_10", Item::new);
     public static final Item EYE_11 = registerItem("eye_11", properties -> new Item(properties.food(
             new FoodProperties.Builder()
@@ -119,7 +147,10 @@ public class ModItems {
                     .onConsume(new TeleportRandomlyConsumeEffect())
                     .build())));
 
-    public static final Item EYE_12 = registerItem("eye_12", Item::new);
+    public static final Item EYE_12 = registerItem(
+        "eye_12",
+        properties -> new Item(properties.rarity(Rarity.RARE))
+    );
 
     private static DeathProtection createEye05DeathProtection() {
         List<ConsumeEffect> effects = new ArrayList<>(
