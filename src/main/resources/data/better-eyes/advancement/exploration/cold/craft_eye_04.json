@@ -1,0 +1,23 @@
+{
+  "parent": "better-eyes:exploration/cold/get_ice_apple",
+  "display": {
+    "icon": {"id": "better-eyes:eye_04"},
+    "title": {"translate": "advancements.better-eyes.exploration.cold.craft_eye_04.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.cold.craft_eye_04.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_04": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_04",
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/cold/get_ice_apple": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["craft_eye_04"]]
+}

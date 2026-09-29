@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/paths/bosses",
+  "display": {
+    "icon": {"id": "minecraft:chest"},
+    "title": {"translate": "advancements.better-eyes.exploration.exploration.ancient_city.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.exploration.ancient_city.description"}
+  },
+  "criteria": {
+    "open_ancient_city_chest": {
+      "trigger": "minecraft:player_generates_container_loot",
+      "conditions": {
+        "loot_tables": "minecraft:chests/ancient_city",
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/root": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["open_ancient_city_chest"]]
+}

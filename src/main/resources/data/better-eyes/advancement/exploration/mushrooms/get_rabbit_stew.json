@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/paths/mushrooms",
+  "display": {
+    "icon": {"id": "minecraft:rabbit_stew"},
+    "title": {"translate": "advancements.better-eyes.exploration.mushrooms.get_rabbit_stew.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.mushrooms.get_rabbit_stew.description"}
+  },
+  "criteria": {
+    "get_rabbit_stew": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:rabbit_stew"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/mushrooms": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_rabbit_stew"]]
+}

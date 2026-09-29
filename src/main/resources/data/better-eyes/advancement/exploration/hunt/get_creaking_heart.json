@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/hunt/visit_pale_garden",
+  "display": {
+    "icon": {"id": "minecraft:creaking_heart"},
+    "title": {"translate": "advancements.better-eyes.exploration.hunt.get_creaking_heart.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.hunt.get_creaking_heart.description"}
+  },
+  "criteria": {
+    "get_creaking_heart": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:creaking_heart"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/hunt/visit_pale_garden": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_creaking_heart"]]
+}

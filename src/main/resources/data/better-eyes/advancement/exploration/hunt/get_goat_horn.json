@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/paths/hunt",
+  "display": {
+    "icon": {"id": "minecraft:goat_horn"},
+    "title": {"translate": "advancements.better-eyes.exploration.hunt.get_goat_horn.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.hunt.get_goat_horn.description"}
+  },
+  "criteria": {
+    "get_goat_horn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:goat_horn"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/hunt": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_goat_horn"]]
+}

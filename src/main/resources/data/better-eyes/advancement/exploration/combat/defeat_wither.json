@@ -1,0 +1,27 @@
+{
+  "parent": "better-eyes:exploration/combat/kill_wither_skeleton",
+  "display": {
+    "icon": {"id": "minecraft:nether_star"},
+    "title": {"translate": "advancements.better-eyes.exploration.combat.defeat_wither.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.combat.defeat_wither.description"}
+  },
+  "criteria": {
+    "kill_wither": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"minecraft:entity_type": "minecraft:wither"}
+        },
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/combat/kill_wither_skeleton": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["kill_wither"]],
+  "rewards": {"recipes": ["better-eyes:eye_03"]}
+}

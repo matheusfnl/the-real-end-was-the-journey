@@ -1,0 +1,24 @@
+{
+  "parent": "better-eyes:exploration/paths/mushrooms",
+  "display": {
+    "icon": {"id": "minecraft:mycelium"},
+    "title": {"translate": "advancements.better-eyes.exploration.mushrooms.visit_mushroom_fields.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.mushrooms.visit_mushroom_fields.description"}
+  },
+  "criteria": {
+    "visit_mushroom_fields": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {"biomes": "minecraft:mushroom_fields"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/paths/mushrooms": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["visit_mushroom_fields"]]
+}

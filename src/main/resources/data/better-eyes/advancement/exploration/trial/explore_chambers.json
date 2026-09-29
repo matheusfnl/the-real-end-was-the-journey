@@ -1,0 +1,24 @@
+{
+  "parent": "better-eyes:exploration/paths/trial",
+  "display": {
+    "icon": {"id": "minecraft:trial_spawner"},
+    "title": {"translate": "advancements.better-eyes.exploration.trial.explore_chambers.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.trial.explore_chambers.description"}
+  },
+  "criteria": {
+    "visit_trial_chambers": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {"structures": "minecraft:trial_chambers"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/paths/trial": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["visit_trial_chambers"]]
+}

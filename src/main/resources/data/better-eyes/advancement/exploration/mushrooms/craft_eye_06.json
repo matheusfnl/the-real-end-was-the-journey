@@ -1,0 +1,23 @@
+{
+  "parent": "better-eyes:exploration/mushrooms/get_concentrated_red_soup",
+  "display": {
+    "icon": {"id": "better-eyes:eye_06"},
+    "title": {"translate": "advancements.better-eyes.exploration.mushrooms.craft_eye_06.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.mushrooms.craft_eye_06.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_06": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_06",
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/mushrooms/get_concentrated_red_soup": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["craft_eye_06"]]
+}

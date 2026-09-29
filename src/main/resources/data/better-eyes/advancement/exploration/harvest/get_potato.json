@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/harvest/plant_seed",
+  "display": {
+    "icon": {"id": "minecraft:potato"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_potato.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_potato.description"}
+  },
+  "criteria": {
+    "get_potato": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:potato"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/harvest/plant_seed": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_potato"]]
+}

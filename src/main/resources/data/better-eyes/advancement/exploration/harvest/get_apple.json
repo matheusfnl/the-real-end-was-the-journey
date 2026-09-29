@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/paths/harvest",
+  "display": {
+    "icon": {"id": "minecraft:apple"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_apple.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_apple.description"}
+  },
+  "criteria": {
+    "get_apple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:apple"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/harvest": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_apple"]]
+}

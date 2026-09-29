@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/mushrooms/visit_mushroom_fields",
+  "display": {
+    "icon": {"id": "better-eyes:concentrated_brown_mushroom_soup"},
+    "title": {"translate": "advancements.better-eyes.exploration.mushrooms.get_concentrated_brown_soup.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.mushrooms.get_concentrated_brown_soup.description"}
+  },
+  "criteria": {
+    "get_concentrated_brown_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "better-eyes:concentrated_brown_mushroom_soup"}],
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/mushrooms/visit_mushroom_fields": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_concentrated_brown_soup"]]
+}

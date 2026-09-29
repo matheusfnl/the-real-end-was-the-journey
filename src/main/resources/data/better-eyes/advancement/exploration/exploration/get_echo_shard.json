@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/exploration/ancient_city",
+  "display": {
+    "icon": {"id": "minecraft:echo_shard"},
+    "title": {"translate": "advancements.better-eyes.exploration.exploration.get_echo_shard.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.exploration.get_echo_shard.description"}
+  },
+  "criteria": {
+    "get_echo_shard": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:echo_shard"}],
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/exploration/ancient_city": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_echo_shard"]]
+}

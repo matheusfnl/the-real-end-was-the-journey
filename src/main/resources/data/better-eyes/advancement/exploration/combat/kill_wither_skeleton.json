@@ -1,0 +1,26 @@
+{
+  "parent": "better-eyes:exploration/paths/bosses",
+  "display": {
+    "icon": {"id": "minecraft:wither_skeleton_skull"},
+    "title": {"translate": "advancements.better-eyes.exploration.combat.kill_wither_skeleton.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.combat.kill_wither_skeleton.description"}
+  },
+  "criteria": {
+    "kill_wither_skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"minecraft:entity_type": "minecraft:wither_skeleton"}
+        },
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/root": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["kill_wither_skeleton"]]
+}

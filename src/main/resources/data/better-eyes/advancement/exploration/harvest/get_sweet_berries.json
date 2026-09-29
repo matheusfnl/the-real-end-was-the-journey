@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/paths/harvest",
+  "display": {
+    "icon": {"id": "minecraft:sweet_berries"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_sweet_berries.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_sweet_berries.description"}
+  },
+  "criteria": {
+    "get_sweet_berries": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:sweet_berries"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/harvest": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_sweet_berries"]]
+}

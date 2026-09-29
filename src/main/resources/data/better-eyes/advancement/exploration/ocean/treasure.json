@@ -1,0 +1,66 @@
+{
+  "parent": "better-eyes:exploration/ocean/treasure_chest",
+  "display": {
+    "icon": {
+      "id": "minecraft:heart_of_the_sea"
+    },
+    "title": {
+      "translate": "advancements.better-eyes.exploration.ocean.treasure.title"
+    },
+    "description": {
+      "translate": "advancements.better-eyes.exploration.ocean.treasure.description"
+    }
+  },
+  "criteria": {
+    "get_heart_of_the_sea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:heart_of_the_sea"
+          }
+        ],
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type_specific/player": {
+              "advancements": {
+                "better-eyes:exploration/ocean/treasure_chest": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "get_nautilus_shell": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:nautilus_shell"
+          }
+        ],
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type_specific/player": {
+              "advancements": {
+                "better-eyes:exploration/ocean/treasure_chest": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["get_heart_of_the_sea", "get_nautilus_shell"]
+  ],
+  "rewards": {
+    "recipes": [
+      "better-eyes:eye_01"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/paths/harvest",
+  "display": {
+    "icon": {"id": "minecraft:glow_berries"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_glow_berries.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_glow_berries.description"}
+  },
+  "criteria": {
+    "get_glow_berries": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:glow_berries"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/harvest": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_glow_berries"]]
+}

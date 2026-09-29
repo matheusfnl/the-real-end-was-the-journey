@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/trial/explore_chambers",
+  "display": {
+    "icon": {"id": "minecraft:ominous_trial_key"},
+    "title": {"translate": "advancements.better-eyes.exploration.trial.get_ominous_key.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.trial.get_ominous_key.description"}
+  },
+  "criteria": {
+    "get_ominous_key": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:ominous_trial_key"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/trial/explore_chambers": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_ominous_key"]],
+  "rewards": {"recipes": ["better-eyes:eye_07"]}
+}

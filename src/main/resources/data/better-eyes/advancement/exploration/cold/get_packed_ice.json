@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/cold/visit_snowy_biome",
+  "display": {
+    "icon": {"id": "minecraft:packed_ice"},
+    "title": {"translate": "advancements.better-eyes.exploration.cold.get_packed_ice.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.cold.get_packed_ice.description"}
+  },
+  "criteria": {
+    "get_packed_ice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:packed_ice"}],
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/cold/visit_snowy_biome": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_packed_ice"]]
+}

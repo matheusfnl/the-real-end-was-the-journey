@@ -1,0 +1,24 @@
+{
+  "parent": "better-eyes:exploration/paths/blizzard",
+  "display": {
+    "icon": {"id": "minecraft:powder_snow_bucket"},
+    "title": {"translate": "advancements.better-eyes.exploration.cold.visit_snowy_biome.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.cold.visit_snowy_biome.description"}
+  },
+  "criteria": {
+    "visit_snowy_biome": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {"biomes": "#minecraft:has_structure/igloo"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/root": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["visit_snowy_biome"]]
+}

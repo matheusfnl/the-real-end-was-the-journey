@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/nether/explore_bastion",
+  "display": {
+    "icon": {"id": "minecraft:netherite_upgrade_smithing_template"},
+    "title": {"translate": "advancements.better-eyes.exploration.nether.get_netherite_upgrade.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.nether.get_netherite_upgrade.description"}
+  },
+  "criteria": {
+    "get_template": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:netherite_upgrade_smithing_template"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/nether/explore_bastion": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_template"]]
+}

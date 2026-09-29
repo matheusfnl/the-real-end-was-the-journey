@@ -1,0 +1,12 @@
+{
+  "parent": "better-eyes:exploration/paths/trial",
+  "display": {
+    "icon": {"id": "minecraft:emerald"},
+    "title": {"translate": "advancements.better-eyes.exploration.trial.win_raid.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.trial.win_raid.description"}
+  },
+  "criteria": {
+    "hero_of_the_village": {"trigger": "minecraft:hero_of_the_village"}
+  },
+  "requirements": [["hero_of_the_village"]]
+}

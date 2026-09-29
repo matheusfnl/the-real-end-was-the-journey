@@ -1,0 +1,23 @@
+{
+  "parent": "better-eyes:exploration/cold/visit_snowy_biome",
+  "display": {
+    "icon": {"id": "better-eyes:ice_apple"},
+    "title": {"translate": "advancements.better-eyes.exploration.cold.get_ice_apple.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.cold.get_ice_apple.description"}
+  },
+  "criteria": {
+    "get_ice_apple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "better-eyes:ice_apple"}],
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/cold/visit_snowy_biome": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_ice_apple"]],
+  "rewards": {"recipes": ["better-eyes:eye_04"]}
+}

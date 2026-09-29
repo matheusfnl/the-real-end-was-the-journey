@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/hunt/find_mansion",
+  "display": {
+    "icon": {"id": "minecraft:totem_of_undying"},
+    "title": {"translate": "advancements.better-eyes.exploration.hunt.get_totem.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.hunt.get_totem.description"}
+  },
+  "criteria": {
+    "get_totem": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:totem_of_undying"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/hunt/find_mansion": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_totem"]],
+  "rewards": {"recipes": ["better-eyes:eye_05"]}
+}

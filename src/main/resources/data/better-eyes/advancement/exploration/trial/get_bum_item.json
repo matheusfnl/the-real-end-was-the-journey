@@ -1,0 +1,21 @@
+{
+  "parent": "better-eyes:exploration/trial/win_raid",
+  "display": {
+    "icon": {"id": "better-eyes:bum_item"},
+    "title": {"translate": "advancements.better-eyes.exploration.trial.get_bum_item.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.trial.get_bum_item.description"}
+  },
+  "criteria": {
+    "get_bum_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "better-eyes:bum_item"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/trial/win_raid": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_bum_item"]]
+}

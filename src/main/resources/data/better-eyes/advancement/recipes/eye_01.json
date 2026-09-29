@@ -1,16 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_special_item": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:heart_of_the_sea"
-          }
-        ]
-      }
-    },
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
@@ -18,8 +8,7 @@
       }
     }
   },
-  "requirements": [["has_special_item", "has_the_recipe"]],
-  "rewards": {
-    "recipes": ["better-eyes:eye_01"]
-  }
+  "requirements": [
+    ["has_the_recipe"]
+  ]
 }

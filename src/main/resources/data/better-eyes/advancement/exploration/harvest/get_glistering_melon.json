@@ -1,0 +1,18 @@
+{
+  "parent": "better-eyes:exploration/harvest/get_melon_slice",
+  "display": {
+    "icon": {"id": "minecraft:glistering_melon_slice"},
+    "title": {"translate": "advancements.better-eyes.exploration.harvest.get_glistering_melon.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.harvest.get_glistering_melon.description"}
+  },
+  "criteria": {
+    "get_glistering_melon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:glistering_melon_slice"}],
+        "player": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/harvest/get_melon_slice": true}}}}
+      }
+    }
+  },
+  "requirements": [["get_glistering_melon"]]
+}

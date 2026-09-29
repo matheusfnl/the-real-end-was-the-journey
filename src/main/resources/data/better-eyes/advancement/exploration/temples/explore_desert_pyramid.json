@@ -1,0 +1,24 @@
+{
+  "parent": "better-eyes:exploration/paths/temples",
+  "display": {
+    "icon": {"id": "minecraft:sandstone"},
+    "title": {"translate": "advancements.better-eyes.exploration.temples.explore_desert_pyramid.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.temples.explore_desert_pyramid.description"}
+  },
+  "criteria": {
+    "visit_desert_pyramid": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {"structures": "minecraft:desert_pyramid"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/paths/temples": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["visit_desert_pyramid"]]
+}

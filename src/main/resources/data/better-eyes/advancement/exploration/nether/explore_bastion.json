@@ -1,0 +1,24 @@
+{
+  "parent": "better-eyes:exploration/paths/nether",
+  "display": {
+    "icon": {"id": "minecraft:polished_blackstone_bricks"},
+    "title": {"translate": "advancements.better-eyes.exploration.nether.explore_bastion.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.nether.explore_bastion.description"}
+  },
+  "criteria": {
+    "visit_bastion": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {"structures": "minecraft:bastion_remnant"},
+            "type_specific/player": {"advancements": {"better-eyes:exploration/paths/nether": true}}
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["visit_bastion"]]
+}
