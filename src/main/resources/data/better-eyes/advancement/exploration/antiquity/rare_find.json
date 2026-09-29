@@ -1,0 +1,32 @@
+{
+  "parent": "better-eyes:exploration/antiquity/explore_ruins",
+  "display": {
+    "icon": {"id": "minecraft:sniffer_egg"},
+    "title": {"translate": "advancements.better-eyes.exploration.antiquity.rare_find.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.antiquity.rare_find.description"}
+  },
+  "criteria": {
+    "get_sniffer_egg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "minecraft:sniffer_egg"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/antiquity/explore_ruins": true}}}
+        }
+      }
+    },
+    "get_pottery_sherd": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "#minecraft:decorated_pot_sherds"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/antiquity/explore_ruins": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_sniffer_egg", "get_pottery_sherd"]],
+  "rewards": {"recipes": ["better-eyes:eye_02"]}
+}

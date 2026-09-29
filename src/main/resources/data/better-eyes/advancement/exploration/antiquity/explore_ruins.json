@@ -1,0 +1,36 @@
+{
+  "parent": "better-eyes:exploration/root",
+  "display": {
+    "icon": {"id": "minecraft:brush"},
+    "title": {"translate": "advancements.better-eyes.exploration.antiquity.explore_ruins.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.antiquity.explore_ruins.description"}
+  },
+  "criteria": {
+    "brush_suspicious_block": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {"blocks": ["minecraft:suspicious_sand", "minecraft:suspicious_gravel"]}
+              }
+            },
+            {
+              "type": "minecraft:match_tool",
+              "predicate": {"items": ["minecraft:brush"]}
+            }
+          ]
+        },
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/root": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["brush_suspicious_block"]]
+}

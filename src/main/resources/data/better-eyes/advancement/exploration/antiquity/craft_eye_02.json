@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/antiquity/rare_find",
+  "display": {
+    "icon": {"id": "better-eyes:eye_02"},
+    "title": {"translate": "advancements.better-eyes.exploration.antiquity.craft_eye_02.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.antiquity.craft_eye_02.description"},
+    "frame": "challenge"
+  },
+  "criteria": {
+    "craft_eye_02": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "better-eyes:eye_02",
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/antiquity/rare_find": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["craft_eye_02"]]
+}
