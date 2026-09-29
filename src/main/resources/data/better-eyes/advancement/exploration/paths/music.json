@@ -1,0 +1,17 @@
+{
+  "parent": "better-eyes:exploration/root",
+  "display": {
+    "icon": {"id": "minecraft:jukebox"},
+    "title": {"translate": "advancements.better-eyes.exploration.paths.music.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.paths.music.description"},
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_ender_pearl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {"items": [{"items": "minecraft:ender_pearl"}]}
+    }
+  },
+  "requirements": [["get_ender_pearl"]]
+}

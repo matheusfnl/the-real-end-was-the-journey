@@ -1,0 +1,22 @@
+{
+  "parent": "better-eyes:exploration/paths/music",
+  "display": {
+    "icon": {"id": "minecraft:music_disc_13"},
+    "title": {"translate": "advancements.better-eyes.exploration.music.get_music_disc.title"},
+    "description": {"translate": "advancements.better-eyes.exploration.music.get_music_disc.description"}
+  },
+  "criteria": {
+    "get_music_disc": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items": "#better-eyes:music_discs"}],
+        "player": {
+          "type": "minecraft:entity_properties", "entity": "this",
+          "predicate": {"type_specific/player": {"advancements": {"better-eyes:exploration/paths/music": true}}}
+        }
+      }
+    }
+  },
+  "requirements": [["get_music_disc"]],
+  "rewards": {"recipes": ["better-eyes:eye_08"]}
+}
