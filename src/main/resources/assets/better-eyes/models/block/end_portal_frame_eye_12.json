@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/end_portal_frame_filled",
+  "textures": {
+    "eye": "better-eyes:block/end_portal_frame_eye_12"
+  }
+}

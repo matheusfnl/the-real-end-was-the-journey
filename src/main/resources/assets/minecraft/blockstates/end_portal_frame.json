@@ -1,0 +1,226 @@
+{
+  "variants": {
+    "better_eyes_eye=0,eye=true,facing=south": {
+      "model": "minecraft:block/end_portal_frame"
+    },
+    "better_eyes_eye=0,eye=true,facing=west": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 90
+    },
+    "better_eyes_eye=0,eye=true,facing=north": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 180
+    },
+    "better_eyes_eye=0,eye=true,facing=east": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 270
+    },
+    "better_eyes_eye=0,eye=false,facing=south": {
+      "model": "minecraft:block/end_portal_frame"
+    },
+    "better_eyes_eye=0,eye=false,facing=west": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 90
+    },
+    "better_eyes_eye=0,eye=false,facing=north": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 180
+    },
+    "better_eyes_eye=0,eye=false,facing=east": {
+      "model": "minecraft:block/end_portal_frame",
+      "y": 270
+    },
+
+    "better_eyes_eye=1,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_01"
+    },
+    "better_eyes_eye=1,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_01",
+      "y": 90
+    },
+    "better_eyes_eye=1,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_01",
+      "y": 180
+    },
+    "better_eyes_eye=1,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_01",
+      "y": 270
+    },
+
+    "better_eyes_eye=2,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_02"
+    },
+    "better_eyes_eye=2,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_02",
+      "y": 90
+    },
+    "better_eyes_eye=2,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_02",
+      "y": 180
+    },
+    "better_eyes_eye=2,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_02",
+      "y": 270
+    },
+
+    "better_eyes_eye=3,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_03"
+    },
+    "better_eyes_eye=3,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_03",
+      "y": 90
+    },
+    "better_eyes_eye=3,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_03",
+      "y": 180
+    },
+    "better_eyes_eye=3,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_03",
+      "y": 270
+    },
+
+    "better_eyes_eye=4,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_04"
+    },
+    "better_eyes_eye=4,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_04",
+      "y": 90
+    },
+    "better_eyes_eye=4,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_04",
+      "y": 180
+    },
+    "better_eyes_eye=4,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_04",
+      "y": 270
+    },
+
+    "better_eyes_eye=5,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_05"
+    },
+    "better_eyes_eye=5,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_05",
+      "y": 90
+    },
+    "better_eyes_eye=5,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_05",
+      "y": 180
+    },
+    "better_eyes_eye=5,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_05",
+      "y": 270
+    },
+
+    "better_eyes_eye=6,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_06"
+    },
+    "better_eyes_eye=6,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_06",
+      "y": 90
+    },
+    "better_eyes_eye=6,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_06",
+      "y": 180
+    },
+    "better_eyes_eye=6,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_06",
+      "y": 270
+    },
+
+    "better_eyes_eye=7,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_07"
+    },
+    "better_eyes_eye=7,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_07",
+      "y": 90
+    },
+    "better_eyes_eye=7,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_07",
+      "y": 180
+    },
+    "better_eyes_eye=7,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_07",
+      "y": 270
+    },
+
+    "better_eyes_eye=8,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_08"
+    },
+    "better_eyes_eye=8,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_08",
+      "y": 90
+    },
+    "better_eyes_eye=8,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_08",
+      "y": 180
+    },
+    "better_eyes_eye=8,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_08",
+      "y": 270
+    },
+
+    "better_eyes_eye=9,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_09"
+    },
+    "better_eyes_eye=9,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_09",
+      "y": 90
+    },
+    "better_eyes_eye=9,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_09",
+      "y": 180
+    },
+    "better_eyes_eye=9,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_09",
+      "y": 270
+    },
+
+    "better_eyes_eye=10,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_10"
+    },
+    "better_eyes_eye=10,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_10",
+      "y": 90
+    },
+    "better_eyes_eye=10,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_10",
+      "y": 180
+    },
+    "better_eyes_eye=10,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_10",
+      "y": 270
+    },
+
+    "better_eyes_eye=11,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_11"
+    },
+    "better_eyes_eye=11,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_11",
+      "y": 90
+    },
+    "better_eyes_eye=11,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_11",
+      "y": 180
+    },
+    "better_eyes_eye=11,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_11",
+      "y": 270
+    },
+
+    "better_eyes_eye=12,eye=true,facing=south": {
+      "model": "better-eyes:block/end_portal_frame_eye_12"
+    },
+    "better_eyes_eye=12,eye=true,facing=west": {
+      "model": "better-eyes:block/end_portal_frame_eye_12",
+      "y": 90
+    },
+    "better_eyes_eye=12,eye=true,facing=north": {
+      "model": "better-eyes:block/end_portal_frame_eye_12",
+      "y": 180
+    },
+    "better_eyes_eye=12,eye=true,facing=east": {
+      "model": "better-eyes:block/end_portal_frame_eye_12",
+      "y": 270
+    }
+  }
+}
