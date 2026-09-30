@@ -7,14 +7,13 @@
     "StructureTemplateManagerMixin",
     "VillagerTradesMixin",
     "VillagerOfferMixin",
-    "HeroTradeWithBumMixin",
-    "HeroEffectCycleMixin",
     "EvokerOriginMixin",
     "LivingEntityLootMixin",
     "MooshroomSoupMixin",
     "JukeboxPlayableMixin",
     "EndPortalFrameBlockMixin",
-    "StrongholdPortalRoomMixin"
+    "StrongholdPortalRoomMixin",
+    "GiveGiftToHeroMixin"
   ],
   "injectors": {
     "defaultRequire": 1
