@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "better-eyes:bum_item"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "better-eyes:gameplay/hero_of_the_village/nitwit_gift"
+}
