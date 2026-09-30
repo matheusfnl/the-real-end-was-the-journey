@@ -9,5 +9,5 @@ pluginManagement {
 	}
 }
 
-// Should match your modid
-rootProject.name = 'better-eyes'
+// Defines the generated artifact name; the stable mod ID remains in fabric.mod.json
+rootProject.name = 'the-real-end-was-the-journey'

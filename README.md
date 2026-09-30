@@ -1,6 +1,6 @@
-# Better Eyes
+# The Real End Was the Journey
 
-Better Eyes is a Minecraft mod that adds new Eyes of Ender crafted with items
+The Real End Was the Journey is a Minecraft mod that adds new Eyes of Ender crafted with items
 found across different biomes, encouraging players to explore the world before
 reaching the endgame.
 
