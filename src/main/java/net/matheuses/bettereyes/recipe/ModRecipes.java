@@ -12,6 +12,10 @@ public final class ModRecipes {
     public static void registerModRecipes() {
         Registry.register(
                 BuiltInRegistries.RECIPE_SERIALIZER,
+                BetterEyes.id("eye_03_with_reusable_nether_star"),
+                Eye03Recipe.SERIALIZER);
+        Registry.register(
+                BuiltInRegistries.RECIPE_SERIALIZER,
                 BetterEyes.id("eye_08_different_discs"),
                 Eye08Recipe.SERIALIZER);
         Registry.register(
