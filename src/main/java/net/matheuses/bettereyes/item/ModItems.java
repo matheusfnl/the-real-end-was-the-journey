@@ -41,7 +41,7 @@ public class ModItems {
                             .build(),
                     Consumables.defaultFood()
                             .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
-                                    new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0)))
+                                    new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0))))
                             .build())
                     .usingConvertsTo(Items.BOWL)));
     public static final Item CONCENTRATED_RED_MUSHROOM_SOUP = registerItem("concentrated_red_mushroom_soup",
