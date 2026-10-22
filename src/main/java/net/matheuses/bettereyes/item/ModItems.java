@@ -37,26 +37,22 @@ public class ModItems {
             properties -> new Item(properties.stacksTo(1).food(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationModifier(1.2F)
+                            .saturationModifier(0.6F)
                             .build(),
                     Consumables.defaultFood()
                             .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
-                                    new MobEffectInstance(MobEffects.REGENERATION, 600, 0),
-                                    new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 300, 0),
-                                    new MobEffectInstance(MobEffects.RESISTANCE, 300, 0))))
+                                    new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0))))
                             .build())
                     .usingConvertsTo(Items.BOWL)));
     public static final Item CONCENTRATED_RED_MUSHROOM_SOUP = registerItem("concentrated_red_mushroom_soup",
             properties -> new Item(properties.stacksTo(1).food(
                     new FoodProperties.Builder()
                             .nutrition(6)
-                            .saturationModifier(1.2F)
+                            .saturationModifier(0.6F)
                             .build(),
                     Consumables.defaultFood()
                             .onConsume(new ApplyStatusEffectsConsumeEffect(List.of(
-                                    new MobEffectInstance(MobEffects.REGENERATION, 600, 0),
-                                    new MobEffectInstance(MobEffects.SATURATION, 300, 0),
-                                    new MobEffectInstance(MobEffects.JUMP_BOOST, 300, 0))))
+                                    new MobEffectInstance(MobEffects.JUMP_BOOST, 200, 0))))
                             .build())
                     .usingConvertsTo(Items.BOWL)));
 
